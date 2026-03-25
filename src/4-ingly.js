@@ -18,4 +18,14 @@ ingly("playing") => return "playingly"
 ingly("swim") => return "swiming"
 */
 
-export const ingly = (word) => {};
+/*
+Fonctionnalités à utiliser en JavaScript :
+
+String.endsWith("ing") — pour vérifier la fin du mot
+La concaténation de chaînes + — pour ajouter le suffixe
+Une condition if / else
+return — pour retourner le résultat
+*/
+
+export const ingly = (word) =>
+  word.toLowerCase().endsWith("ing") ? word + "ly" : word + "ing";
