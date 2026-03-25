@@ -9,28 +9,23 @@
  *      arrayToFrench(['un', 'deux', 'trois', 'soleil']); // returns "un, deux, trois et soleil"
  *      arrayToFrench(['noir', 'blanc']); // returns "noir et blanc"
  */
+
+// récupérer les mots du tableau
+// séparation avec "," et/ou "et"
+// tableau = 0 mot
+// tableau = 1 mot
+// tableau = avec plusieurs mots
+
 export const arrayToFrench = (array) => {
-  // récupérer les mots du tableau
-  // séparation avec "," et/ou "et"
-  // tableau = 0 mot
   if (array.length === 0) {
     return "";
-  }
-  // tableau = 1 mot
-  else if (array.length === 1) {
+  } else if (array.length === 1) {
     return array[0];
-  }
-  // tableau = 2 mots
-  else if (array.length === 2) {
-    return array[0] + " et " + array[1];
-  }
-  // tableau = 3 mots ou plus
-  else {
+  } else {
     return (
       array.slice(0, array.length - 1).join(", ") +
       " et " +
       array[array.length - 1]
     );
   }
-  // return "sentence"
 };
