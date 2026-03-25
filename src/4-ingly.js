@@ -27,5 +27,18 @@ Une condition if / else
 return — pour retourner le résultat
 */
 
-export const ingly = (word) =>
-  word.toLowerCase().endsWith("ing") ? word + "ly" : word + "ing";
+export const ingly = (word) => {
+  if (word.toLowerCase().endsWith("ing")) {
+    if (word.toUpperCase() === word) {
+      return word + "LY";
+    } else {
+      return word + "ly";
+    }
+  } else {
+    if (word.toUpperCase() === word && word !== "") {
+      return word + "ING";
+    } else {
+      return word + "ing";
+    }
+  }
+};
