@@ -9,4 +9,8 @@
  *      arrayToFrench(['un', 'deux', 'trois', 'soleil']); // returns "un, deux, trois et soleil"
  *      arrayToFrench(['noir', 'blanc']); // returns "noir et blanc"
  */
-export const arrayToFrench = (array) => {};
+export const arrayToFrench = (array) => {
+  // récupérer les mots du tableau
+  // séparation avec "," et/ou "et" pour les deux derniers mots ou si seulement deux mots
+  // return "sentence"
+};
