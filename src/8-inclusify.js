@@ -14,11 +14,32 @@
  * @returns {string} an updated text with every
  * "il/elle" replaced by "iel"
  * "ils/elles" replaced by "iels"
- * "ceux/celle" replaced by "cells"
+ * "ceux/celle" replaced by "celleux"
  */
 export const inclusify = (text) => {
   return text
-    .replaceAll("il" && "elle", "iel")
-    .replaceAll("ils" && "elles", "iels")
-    .replaceAll("ceux" && "celle", "cells");
+    .replace(/\bil\b/g, "iel")
+    .replace(/\bIl\b/g, "Iel")
+    .replace(/\bils\b/g, "iels")
+    .replace(/\bIls\b/g, "Iels")
+    .replace(/\belle\b/g, "iel")
+    .replace(/\bElle\b/g, "Iel")
+    .replace(/\belles\b/g, "iels")
+    .replace(/\bElles\b/g, "Iels")
+    .replace(/\bceux\b/g, "celleux")
+    .replace(/\bCeux\b/g, "Celleux")
+    .replace(/\bcelle\b/g, "celleux")
+    .replace(/\bCelle\b/g, "Celleux");
 };
+
+/*
+\b en regex signifie "frontière de mot" — c'est une position entre un caractère de mot (lettre, chiffre) et un non-mot (espace, ponctuation, début/fin de phrase).
+Par exemple :
+javascript/\bil\b/  // matche "il" seul, mais pas "cils" ni "ville"
+
+Les regex sont sensibles à la casse par défaut.
+Pour ignorer la casse, on ajoute le flag i à la regex :
+javascript/\bil\b/i  // matche "il", "Il", "IL"...
+
+
+*/
