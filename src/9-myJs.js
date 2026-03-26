@@ -1,5 +1,5 @@
 /**
- * This function re-implement the behavior of the .includes() array method
+ * This function re-implement the behavior (comportement) of the .includes() array method
  * without using any existing functions.
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
  *
@@ -10,7 +10,14 @@
  *      myIncludes(['un', 'deux', 'trois'], 'trois'); // returns true
  *      myIncludes(['un', 'deux', 'trois'], 'quatre'); // returns false
  */
-export const myIncludes = (array, searchElement) => {};
+export const myIncludes = (array, searchElement) => {
+  for (let index = 0; index < array.length; index++) {
+    if (array[index] === searchElement) {
+      return true;
+    }
+  }
+  return false;
+};
 
 /**
  * This function re-implement the behavior of the .indexOf() array method
@@ -24,7 +31,14 @@ export const myIncludes = (array, searchElement) => {};
  *      myIndexOf(['un', 'deux', 'trois'], 'trois'); // returns 3
  *      myIndexOf(['un', 'deux', 'trois'], 'quatre'); // returns -1
  */
-export const myIndexOf = (array, searchElement) => {};
+export const myIndexOf = (array, searchElement) => {
+  for (let index = 0; index < array.length; index++) {
+    if (array[index] === searchElement) {
+      return index;
+    }
+  }
+  return -1;
+};
 
 /**
  * This function re-implements the behavior of the .startsWith() string method
