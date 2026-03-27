@@ -1,16 +1,38 @@
 import { suite, test, expect } from "vitest";
-import { preferedKid, distributeGifts } from "./13-gifts.js";
+import {
+  totalPrice,
+  mostExpensive,
+  globalMostExpensive,
+  preferedKid,
+  distributeGifts,
+} from "./13-gifts.js";
 
 suite("totalPrice", () => {
   // TODO: write some tests
+  test("returns the total price of an array of gifts", () => {});
+  expect(
+    totalPrice([
+      { name: "iPhone", price: 800 },
+      { name: "skateboard", price: 70 },
+    ]),
+  ).toBe(870);
 });
 
 suite("mostExpensive", () => {
   // TODO: write some tests
+  test("returns the name of the most expensive one", () => {});
+  expect(
+    mostExpensive([
+      { name: "iPhone", price: 800 },
+      { name: "skateboard", price: 70 },
+    ]),
+  ).toBe("iPhone");
 });
 
 suite("globalMostExpensive", () => {
   // TODO: write some tests
+  test("", () => {});
+  expect(globalMostExpensive()).toBe();
 });
 
 suite("preferedKid", () => {

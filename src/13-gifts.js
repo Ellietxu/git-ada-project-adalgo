@@ -4,10 +4,17 @@
  * @example
  *      totalPrice([{name: 'iPhone', price: 800}, {name: 'skateboard', price: 70}]); // returns 870
  *
- * @param {{name: string; price: number}[]} gifts
+ * @param {{name: string, price: number}[]} gifts
  * @returns {number} total price
  */
-export const totalPrice = (gifts) => {};
+export const totalPrice = (gifts) => {
+  let result = 0;
+  gifts.forEach((element) => {
+    console.log(element);
+    result += element.price;
+  });
+  return result;
+};
 
 /**
  * This function takes an array of gifts and returns the name of the most expensive one.
@@ -15,7 +22,15 @@ export const totalPrice = (gifts) => {};
  * @param {{name: string; price: number}[]} gifts
  * @returns {string} gift's name
  */
-export const mostExpensive = (gifts) => {};
+export const mostExpensive = (gifts) => {
+  let maxGift = gifts[0];
+  for (const gift of gifts) {
+    if (gift.price > maxGift.price) {
+      maxGift = gift;
+    }
+  }
+  return maxGift.name;
+};
 
 /**
  * This function takes an array of kids and returns the name of the most expensive gift
@@ -33,7 +48,21 @@ export const mostExpensive = (gifts) => {};
  * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
  * @returns {string} gift's name
  */
-export const globalMostExpensive = (kids) => {};
+export const globalMostExpensive = (kids) => {
+  if (kids.length === 0) return null;
+
+  let maxGift = null;
+
+  for (const kid of kids) {
+    for (const gift of kid.gifts) {
+      if (maxGift === null || gift.price > maxGift.price) {
+        maxGift = gift;
+      }
+    }
+  }
+
+  return maxGift.name;
+};
 
 /**
  * This function takes an array of kids and return the name of the kid that has
