@@ -1,11 +1,21 @@
-import {expect, test} from "vitest";
-import {toCamelCase, toSnakeCase} from "./2-namingConventions";
+import { describe, expect, test } from "vitest";
+import { toCamelCase, toSnakeCase } from "./10-namingConventions";
 
 // TODO: test camelcase with one word, with multiple words and when the input is already camelcase
 
-test("Some simple cases for the toSnakeCase function", () => {
+describe("namingConventions", () => {
+  test("Some simple cases for the toCamelCase function", () => {
+    expect(toCamelCase("test")).toBe("test");
+    expect(toCamelCase("to_camel_case")).toBe("toCamelCase");
+    expect(toCamelCase("myFunction")).toBe("myFunction");
+  });
+
+  // snake_case
+
+  test("Some simple cases for the toSnakeCase function", () => {
     expect(toSnakeCase("test")).toBe("test");
     expect(toSnakeCase("toSnakeCase")).toBe("to_snake_case");
     expect(toSnakeCase("myFunction")).toBe("my_function");
     expect(toSnakeCase("anotherFunction")).toBe("another_function");
+  });
 });
