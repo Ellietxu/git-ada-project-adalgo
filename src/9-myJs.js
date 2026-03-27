@@ -139,9 +139,8 @@ export const myObjectKeys = (obj) => {
  */
 export const myObjectEntries = (obj) => {
   let array = [];
-  for (let obj in obj) {
-    array[array.length] = obj;
+  for (let key in obj) {
+    array[array.length] = [key, obj[key]];
   }
   return array;
-  //
 };
