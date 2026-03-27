@@ -29,5 +29,51 @@
  Will return:
  { letters: 0, words: 0, sentences: 0 }
 */
+/**
+ * La fonction retourne un objet :
+ * {letters: number, words: number, sentences: number}
+ * @param {string} str
+ * @returns {object} {key:valeur}
+ */
+export const analyze_text = (str) => {
+  let letters = 0;
+  let words = 0;
+  let sentences = 0;
+  let isAWord = false;
 
-export const analyze_text = () => {};
+  if (str === "") return { letters, words, sentences }; // que retourner ?
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+      letters += 1;
+      if (!isAWord) {
+        words += 1;
+        isAWord = true;
+      } else {
+        isAWord = false;
+      }
+    }
+  }
+};
+
+/*
+
+inWord = false  // suis-je en train de lire un mot ?
+
+
+Retourner { letters, words, sentences }
+*/
+
+/*
+Pour chaque caractère :
+  SI c'est une lettre (a-z ou A-Z) :
+    letters += 1
+    SI on n'était pas déjà dans un mot :
+      words += 1
+      inWord = true
+  SINON :
+    inWord = false
+  SI c'est '.', '!' ou '?' :
+    sentences += 1
+    */
