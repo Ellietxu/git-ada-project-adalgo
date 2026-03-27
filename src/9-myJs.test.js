@@ -2,10 +2,11 @@ import { suite, test, expect } from "vitest";
 import {
   myIncludes,
   myIndexOf,
+  myStartsWith,
+  myRepeat,
   myJoin,
   myObjectKeys,
   myObjectEntries,
-  myStartsWith,
 } from "./9-myJs";
 
 // "suite" équivaut à "describe"
@@ -29,13 +30,16 @@ suite("myJs", () => {
   });
 
   // TODO: test myStartsWith
-
   test("myStartsWith", () => {
-    expect(myStartsWith("bonjour", "bon").toBe(true));
-    expect(myStartsWith("bonjour", "jour").toBe(false));
+    expect(myStartsWith("bonjour", "bon")).toBe(true);
+    expect(myStartsWith("bonjour", "jour")).toBe(false);
   });
 
   // TODO: test myRepeat
+  test("myRepeat", () => {
+    expect(myRepeat("ha", 3)).toBe("hahaha");
+    expect(myRepeat("x", 0)).toBe("");
+  });
 
   test("myJoin", () => {
     expect(myJoin(["a", "b", "c"], "-")).toBe("a-b-c");

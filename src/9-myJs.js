@@ -52,7 +52,14 @@ export const myIndexOf = (array, searchElement) => {
  *      myStartsWith('bonjour', 'bon'); // returns true
  *      myStartsWith('bonjour', 'jour'); // returns false
  */
-export const myStartsWith = () => {};
+export const myStartsWith = (str, search) => {
+  for (let index = 0; index < search.length; index++) {
+    if (str[index] !== search[index]) {
+      return false;
+    }
+  }
+  return true;
+};
 
 /**
  * This function re-implements the behavior of the .repeat() string method
@@ -66,7 +73,15 @@ export const myStartsWith = () => {};
  *      myRepeat('ha', 3); // returns 'hahaha'
  *      myRepeat('x', 0); // returns ''
  */
-export const myRepeat = () => {};
+export const myRepeat = (str, count) => {
+  let result = "";
+  for (let i = 0; i < count; i++) {
+    result += str;
+  }
+  return result;
+  // je dois retourner str*count si count !== 0
+  // je dois retourner str vide si count === 0
+};
 
 /**
  * This function re-implements the behavior of the .join() array method
