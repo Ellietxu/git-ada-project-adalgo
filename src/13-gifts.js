@@ -83,7 +83,22 @@ export const globalMostExpensive = (kids) => {
  * @param {{name: string; gifts: {name: string; price: number}[]}[]} kids
  * @returns {string} kid's name
  */
-export const preferedKid = (kids) => {};
+
+export const preferedKid = (kids) => {
+  if (kids.length === 0) return null;
+
+  let expensiveKid = null; // l'enfant le plus cher
+  let maxTotal = 0;
+
+  for (const kid of kids) {
+    const totalGifts = kid.gifts.reduce((sum, gift) => sum + gift.price, 0);
+    if (expensiveKid === null || totalGifts > maxTotal) {
+      maxTotal = totalGifts;
+      expensiveKid = kid.name;
+    }
+  }
+  return expensiveKid;
+};
 
 /**
  * Distributes a list of gifts among a list of kids.
