@@ -1,6 +1,7 @@
 // Ã©crivez les tests attestant du bon fonctionnement des questions suivantes.
 // faites une phase de clean code et modifier certaines variables / noms de variable si nÃ©cessaire.
 
+/*
 function arraysEqual(a, b) {
   return a.length === b.length && a.every((val, i) => val === b[i]);
 }
@@ -20,8 +21,8 @@ function badGirl(divID, data, nbQuestion) {
         <button id="next-question">Question suivante</button>
     `;
 }
-
-function initNextButton() {
+*/
+export function initNextButton() {
   const nextButton = document.getElementById("next-question-button");
   const resultButton = document.createElement("button");
   resultButton.innerText = "RÃ©sultat";
@@ -31,8 +32,10 @@ function initNextButton() {
   answerButtons.forEach((button) => (button.disabled = false));
 }
 
+/*
 // Fonction qui transforme le score en pourcentage
 
 function calculPourcentScore(finalScore, numberQuestions) {
   pourcentScore = (finalScore / numberQuestions) * 100;
 }
+*/
