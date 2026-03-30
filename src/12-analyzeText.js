@@ -52,16 +52,16 @@ export const analyzeText = (str) => {
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
     if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
-      letters += 1;
+      letters += 1; // autre syntaxe letters++
       if (!isAWord) {
-        words += 1;
+        words += 1; // autre syntaxe words++
         isAWord = true;
       }
     } else {
       isAWord = false;
     }
     if (char === "." || char === "!" || char === "?") {
-      sentences += 1;
+      sentences += 1; // autre syntaxe sentences++
     }
   }
   return { letters, words, sentences };
