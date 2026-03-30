@@ -48,8 +48,7 @@ export const passwd_validator = (str) => {
     if (char >= "A" && char <= "Z") hasUpperChar = true;
     if (char >= "0" && char <= "9") hasNumberChar = true;
     if (char === "$" || char === "#" || char === "@") hasSpecialChar = true;
-
-    // Retourner VRAI seulement si les 4 conditions sont vraies}
-    return hasLowerChar && hasUpperChar && hasNumberChar && hasSpecialChar;
   }
+  // Retourner VRAI seulement si les 4 conditions sont vraies}
+  return hasLowerChar && hasUpperChar && hasNumberChar && hasSpecialChar;
 };
